@@ -8,5 +8,6 @@ namespace MedChartBloodWork.Models
 {
     public class ApplicationUser:IdentityUser
     {
+        public BloodWork BloodWork { get; set; }
     }
 }
