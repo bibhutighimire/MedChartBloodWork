@@ -1,4 +1,5 @@
 using MedChartBloodWork.Data;
+using MedChartBloodWork.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,7 +33,9 @@ namespace MedChartBloodWork
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                 .AddDefaultTokenProviders()
+                 .AddDefaultUI()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
         }
