@@ -24,14 +24,7 @@ namespace MedChartBloodWork.Controllers
             return View();
         }
 
-        //public ActionResult GetData()
-        //{
-           
-        //    var query = _context.BloodWork
-        //           .GroupBy(p => p.ExamDate)
-        //           .Select(g => new { name = g.Key, count = g.Sum(w => w.Hemoglobin) }).ToList();
-        //    return Json(query, JsonRequestBehavior.AllowGet);
-        //}
+
         public IActionResult Privacy()
         {
             return View();
