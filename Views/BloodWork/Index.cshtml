@@ -4,10 +4,10 @@
     ViewData["Title"] = "Blood Work List";
 }
 
-<h1>List Of Blood Works</h1>
+<h3>List Of Blood Works</h3>
 
 <p>
-    <button type="button" class="btn btn-success"> <a asp-action="AddBloodWork">Create New Blood Work</a></button>
+    <button type="button" class="btn btn-success text-white"> <a style="color:white" asp-action="AddBloodWork">Create New Blood Work</a></button>
 </p>
 <table class="table table-bordered">
     <thead>
@@ -72,9 +72,9 @@
                 <td>
                    
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-success btn-sm"><a asp-action="Edit" asp-route-id="@item.BloodWorkID">Edit</a></button>
-                        <button type="button" class="btn btn-success btn-sm"> <a asp-action="Details" asp-route-id="@item.BloodWorkID">Details</a> </button>
-                        <button type="button" class="btn btn-danger btn-sm"><a asp-action="Delete" asp-route-id="@item.BloodWorkID">Delete</a></button>
+                        <button type="button" class="btn btn-success btn-sm text-white"><a style="color:white" asp-action="Edit" asp-route-id="@item.BloodWorkID">Edit</a></button>
+                        <button type="button" class="btn btn-success btn-sm text-white"> <a style="color:white" asp-action="Details" asp-route-id="@item.BloodWorkID">Details</a> </button>
+                        <button type="button" class="btn btn-danger btn-sm text-white"><a style="color:white" asp-action="Delete" asp-route-id="@item.BloodWorkID">Delete</a></button>
                        
                     </div>
 

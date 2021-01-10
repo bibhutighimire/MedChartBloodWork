@@ -23,6 +23,14 @@ namespace MedChartBloodWork.Controllers
             return View();
         }
 
+        public ActionResult GetData()
+        {
+           
+            var query = context.Order_Details.Include("Product")
+                   .GroupBy(p => p.Product.ProductName)
+                   .Select(g => new { name = g.Key, count = g.Sum(w => w.Quantity) }).ToList();
+            return Json(query, JsonRequestBehavior.AllowGet);
+        }
         public IActionResult Privacy()
         {
             return View();
