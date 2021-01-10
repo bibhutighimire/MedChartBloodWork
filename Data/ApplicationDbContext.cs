@@ -22,6 +22,7 @@ namespace MedChartBloodWork.Data
         }
         //Code below will create DBSET in database with table name BloodWork
         public DbSet<BloodWork> BloodWork { get; set; }
-        
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+
     }
 }

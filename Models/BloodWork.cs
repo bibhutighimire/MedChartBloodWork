@@ -10,7 +10,7 @@ namespace MedChartBloodWork.Models
 {
     public class BloodWork
     {
-        public Guid BloodWorkID { get; set; }
+        public int BloodWorkID { get; set; }
         [Required]
         [PersonalData]
         [DataType(DataType.Date)]
@@ -54,7 +54,6 @@ namespace MedChartBloodWork.Models
         [Column(TypeName = "varchar(10)")]
         [RegularExpression(@"^[0-9.-]*$", ErrorMessage = "Please enter numbers only.")]
         public string RedBloodCellCount { get; set; }
-
         public string ApplicationUserID { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
     }

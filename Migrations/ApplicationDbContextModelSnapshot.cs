@@ -4,16 +4,14 @@ using MedChartBloodWork.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace MedChartBloodWork.Data.Migrations
+namespace MedChartBloodWork.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210109052643_one")]
-    partial class one
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,9 +21,10 @@ namespace MedChartBloodWork.Data.Migrations
 
             modelBuilder.Entity("MedChartBloodWork.Models.BloodWork", b =>
                 {
-                    b.Property<Guid>("BloodWorkID")
+                    b.Property<int>("BloodWorkID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("ApplicationUserID")
                         .HasColumnType("nvarchar(450)");

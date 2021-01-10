@@ -1,17 +1,17 @@
 ﻿@model MedChartBloodWork.Models.BloodWork
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
 }
 
-<h1>Edit Your BloodWork</h1>
+<h1>Create</h1>
 
+<h4>BloodWork</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="EditPost">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="BloodWorkID" />
             <div class="form-group">
                 <label asp-for="DateCreated" class="control-label"></label>
                 <input asp-for="DateCreated" class="form-control" />
@@ -52,9 +52,12 @@
                 <input asp-for="RedBloodCellCount" class="form-control" />
                 <span asp-validation-for="RedBloodCellCount" class="text-danger"></span>
             </div>
-           
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <label asp-for="ApplicationUserID" class="control-label"></label>
+                <select asp-for="ApplicationUserID" class ="form-control" asp-items="ViewBag.ApplicationUserID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
