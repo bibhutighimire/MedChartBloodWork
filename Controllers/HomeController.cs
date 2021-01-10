@@ -1,4 +1,5 @@
-﻿using MedChartBloodWork.Models;
+﻿using MedChartBloodWork.Data;
+using MedChartBloodWork.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,11 +12,11 @@ namespace MedChartBloodWork.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -23,14 +24,14 @@ namespace MedChartBloodWork.Controllers
             return View();
         }
 
-        public ActionResult GetData()
-        {
+        //public ActionResult GetData()
+        //{
            
-            var query = context.Order_Details.Include("Product")
-                   .GroupBy(p => p.Product.ProductName)
-                   .Select(g => new { name = g.Key, count = g.Sum(w => w.Quantity) }).ToList();
-            return Json(query, JsonRequestBehavior.AllowGet);
-        }
+        //    var query = _context.BloodWork
+        //           .GroupBy(p => p.ExamDate)
+        //           .Select(g => new { name = g.Key, count = g.Sum(w => w.Hemoglobin) }).ToList();
+        //    return Json(query, JsonRequestBehavior.AllowGet);
+        //}
         public IActionResult Privacy()
         {
             return View();

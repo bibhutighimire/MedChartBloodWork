@@ -12,42 +12,43 @@
         <form asp-action="AddBloodWork">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="DateCreated" class="control-label"></label>
+                Date Created
                 <input asp-for="DateCreated" class="form-control" />
                 <span asp-validation-for="DateCreated" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ExamDate" class="control-label"></label>
+                Exam Date
                 <input asp-for="ExamDate" class="form-control" />
                 <span asp-validation-for="ExamDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ResultDate" class="control-label"></label>
+                Result Date
                 <input asp-for="ResultDate" class="form-control" />
                 <span asp-validation-for="ResultDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                Description
+                <textarea placeholder="Enter Description Here!" asp-for="Description" class="form-control" cols="30" rows="5"></textarea>
+               
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Hemoglobin" class="control-label"></label>
+                Hemoglobin
                 <input asp-for="Hemoglobin" class="form-control" />
                 <span asp-validation-for="Hemoglobin" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Hematocrit" class="control-label"></label>
+                Hematocrit
                 <input asp-for="Hematocrit" class="form-control" />
                 <span asp-validation-for="Hematocrit" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="WhiteBloodCellCount" class="control-label"></label>
+                White Blood Cell Count
                 <input asp-for="WhiteBloodCellCount" class="form-control" />
                 <span asp-validation-for="WhiteBloodCellCount" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RedBloodCellCount" class="control-label"></label>
+                Red Blood Cell Count
                 <input asp-for="RedBloodCellCount" class="form-control" />
                 <span asp-validation-for="RedBloodCellCount" class="text-danger"></span>
             </div>
@@ -60,7 +61,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-success">Back to List</a>
 </div>
 
 @section Scripts {
